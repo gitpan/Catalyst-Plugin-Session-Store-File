@@ -1,0 +1,7 @@
+Changes
+Makefile.PL
+MANIFEST
+README
+t/Catalyst-Plugin-Session-Store-File.t
+lib/Catalyst/Plugin/Session/Store/File.pm
+META.yml                                 Module meta-data (added by MakeMaker)
