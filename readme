@@ -1,4 +1,4 @@
-Catalyst-Plugin-Session-Store-File version 0.02
+Catalyst-Plugin-Session-Store-File version 0.03
 ===============================================
 
 The README is used to introduce the module and provide instructions on
@@ -31,8 +31,6 @@ This module requires these other modules and libraries:
 	Cache::Cache
 
 COPYRIGHT AND LICENCE
-
-Put the correct copyright and licence information here.
 
 Copyright (C) 2005 by Sascha Kiefer
 

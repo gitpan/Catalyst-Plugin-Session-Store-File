@@ -9,7 +9,7 @@ use base qw/
 use NEXT;
 use Cache::FileCache ();
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 __PACKAGE__->mk_classdata(qw/_session_file_storage/);
 
@@ -89,6 +89,8 @@ sub setup_session {
       File::Spec->catdir( Catalyst::Utils::class2tempdir($c),
         "session", "data", );
 
+    $root = $c->path_to($root) if $c->config->{session}{relative};
+
     Path::Class::dir($root)->mkpath;
 
     my $cfg = $c->config->{session};
@@ -128,6 +130,10 @@ process that creates the file.  If this may be a problem, for example
 if you may try to debug the program as one user and run it as another,
 specify a directory like C<< /tmp/session-$> >>, which includes the
 UID of the process in the filename.
+
+=item relative
+
+Makes the storage path relative to I<$c->path_to>
 
 =item namespace
 
