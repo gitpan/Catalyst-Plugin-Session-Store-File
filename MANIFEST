@@ -1,7 +1,10 @@
 Changes
 Makefile.PL
 MANIFEST
-README
-t/Catalyst-Plugin-Session-Store-File.t
+readme
+t/01use.t
+t/02pod.t
+t/03podcoverage.t
+t/04basic.t
 lib/Catalyst/Plugin/Session/Store/File.pm
 META.yml                                 Module meta-data (added by MakeMaker)

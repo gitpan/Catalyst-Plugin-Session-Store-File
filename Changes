@@ -1,5 +1,8 @@
 Revision history for Perl extension Catalyst::Plugin::Session::Store::File.
 
+0.04  Thu Nov 18 20:00:00 2005
+	- more tests added
+
 0.03  Thu Nov 15 23:03:30 2005
 	- implemented "relative" option
 
