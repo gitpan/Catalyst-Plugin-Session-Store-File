@@ -9,7 +9,7 @@ use base qw/
 use NEXT;
 use Cache::FileCache ();
 
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 
 __PACKAGE__->mk_classdata(qw/_session_file_storage/);
 
@@ -133,12 +133,12 @@ UID of the process in the filename.
 
 =item relative
 
-Makes the storage path relative to I<$c->path_to>
+Makes the storage path relative to I< $c->path_to >
 
 =item namespace
 
 The namespace associated with this cache. Defaults to an empty string if not explicitly set.
-If set, the session data will be stored in a directory called C<MyApp/session/data/<namespace>>.
+If set, the session data will be stored in a directory called C< MyApp/session/data/<namespace> >.
 
 =item cache_depth
 
