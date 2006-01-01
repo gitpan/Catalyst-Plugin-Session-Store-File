@@ -1,10 +1,10 @@
 Changes
+lib/Catalyst/Plugin/Session/Store/File.pm
 Makefile.PL
-MANIFEST
+MANIFEST			This list of files
 readme
 t/01use.t
 t/02pod.t
 t/03podcoverage.t
-t/04basic.t
-lib/Catalyst/Plugin/Session/Store/File.pm
+t/basic.t
 META.yml                                 Module meta-data (added by MakeMaker)
