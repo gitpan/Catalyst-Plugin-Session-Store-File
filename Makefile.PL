@@ -7,6 +7,7 @@ WriteMakefile(
     PREREQ_PM => {
         'Class::Data::Inheritable'  => '0.04',
         'Class::Accessor::Fast'     => '0.22',
+        'Catalyst'                  => '5',
         'Catalyst::Plugin::Session' => '0.01',
         'Cache::Cache'              => '1.02',
     },    # e.g., Module::Name => 1.1
