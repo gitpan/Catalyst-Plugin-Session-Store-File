@@ -1,6 +1,6 @@
 ---
 name: Catalyst-Plugin-Session-Store-File
-version: 0.08
+version: 0.09
 author:
   - 'Sascha Kiefer, L<esskar@cpan.org>'
 abstract: |-
@@ -16,5 +16,5 @@ requires:
 provides:
   Catalyst::Plugin::Session::Store::File:
     file: lib/Catalyst/Plugin/Session/Store/File.pm
-    version: 0.08
+    version: 0.09
 generated_by: Module::Build version 0.2611

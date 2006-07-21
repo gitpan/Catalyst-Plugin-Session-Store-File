@@ -1,11 +1,11 @@
-Build.pl
+Build.PL
 CHANGES
 lib/Catalyst/Plugin/Session/Store/File.pm
 MANIFEST			This list of files
+README
 t/01use.t
 t/02pod.t
 t/03podcoverage.t
 t/04basic.t
 META.yml
 Makefile.PL
-README
