@@ -2,16 +2,17 @@
 use ExtUtils::MakeMaker;
 WriteMakefile
 (
+          'PL_FILES' => {},
+          'INSTALLDIRS' => 'site',
           'NAME' => 'Catalyst::Plugin::Session::Store::File',
+          'EXE_FILES' => [],
           'VERSION_FROM' => 'lib/Catalyst/Plugin/Session/Store/File.pm',
           'PREREQ_PM' => {
-                           'Cache::Cache' => '1.02',
+                           'Class::Data::Inheritable' => '0.04',
+                           'Class::Accessor' => '0.22',
                            'Catalyst' => '5',
                            'Catalyst::Plugin::Session' => '0.01',
-                           'Class::Accessor::Fast' => '0.22',
-                           'Class::Data::Inheritable' => '0.04'
-                         },
-          'INSTALLDIRS' => 'site',
-          'PL_FILES' => {}
+                           'Cache::Cache' => '1.02'
+                         }
         )
 ;

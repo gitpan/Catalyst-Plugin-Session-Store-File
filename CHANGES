@@ -1,5 +1,8 @@
 Revision history for Perl extension Catalyst::Plugin::Session::Store::File.
 
+0.10  07.11.2006 03:06
+    - Example added
+
 0.09  Fri Jul 21 19:37:34 2006
     - Renamed Build.pl to Build.PL
 
