@@ -1,80 +1,27 @@
-NAME
-    Catalyst::Plugin::Session::Store::File - File storage backend for
-    session data.
+Catalyst-Plugin-Session-Store-File version 0.04
+===============================================
 
-SYNOPSIS
-            use Catalyst qw/Session Session::Store::File Session::State::Foo/;
+INSTALLATION
 
-            MyApp->config->{session} = {
-                    storage => '/tmp/session'
-            };
+To install this module type the following:
 
-            # ... in an action:
-            $c->session->{foo} = 'bar'; # will be saved
+   perl Makefile.PL
+   make
+   make test
+   make install
 
-DESCRIPTION
-    "Catalyst::Plugin::Session::Store::File" is an easy to use storage
-    plugin for Catalyst that uses an simple file to act as a shared memory
-    interprocess cache. It is based on "Cache::FileCache".
+DEPENDENCIES
 
-  METHODS
-    get_session_data
-    store_session_data
-    delete_session_data
-    delete_expired_sessions
-        These are implementations of the required methods for a store. See
-        Catalyst::Plugin::Session::Store.
+This module requires these other modules and libraries:
 
-    setup_session
-        Sets up the session cache file.
+	Class::Data::Inheritable
+	Class::Accessor::Fast
+	Catalyst::Plugin::Session
+	Cache::Cache
 
-CONFIGURATION
-    These parameters are placed in the hash under the "session" key in the
-    configuration hash.
+COPYRIGHT AND LICENCE
 
-    storage
-        Specifies the directory root to be used for the sharing of session
-        data. The default value will use File::Spec to find the default
-        tempdir, and use a file named "MyApp/session/data", where "MyApp" is
-        replaced with the appname.
+Copyright (C) 2005 by Sascha Kiefer
 
-        Note that the file will be created with mode 0640, which means that
-        it will only be writeable by processes running with the same uid as
-        the process that creates the file. If this may be a problem, for
-        example if you may try to debug the program as one user and run it
-        as another, specify a directory like "/tmp/session-$>", which
-        includes the UID of the process in the filename.
-
-    relative
-        Makes the storage path relative to *$c-*path_to>
-
-    namespace
-        The namespace associated with this cache. Defaults to an empty
-        string if not explicitly set. If set, the session data will be
-        stored in a directory called "MyApp/session/data/<namespace">.
-
-    cache_depth
-        The number of subdirectories deep to session object item. This
-        should be large enough that no session directory has more than a few
-        hundred objects. Defaults to 3 unless explicitly set.
-
-    directory_umask
-        The directories in the session on the filesystem should be globally
-        writable to allow for multiple users. While this is a potential
-        security concern, the actual cache entries are written with the
-        user's umask, thus reducing the risk of cache poisoning. If you
-        desire it to only be user writable, set the 'directory_umask' option
-        to '077' or similar. Defaults to '000' unless explicitly set.
-
-SEE ALSO
-    Catalyst, Catalyst::Plugin::Session, Cache::FileCache.
-
-AUTHOR
-    Sascha Kiefer, esskar@cpan.org
-
-COPYRIGHT AND LICENSE
-    Copyright (C) 2005 Sascha Kiefer
-
-    This library is free software; you can redistribute it and/or modify it
-    under the same terms as Perl itself.
-
+This program is free software, you can redistribute it and/or modify it
+under the same terms as Perl itself.

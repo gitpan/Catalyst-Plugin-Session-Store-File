@@ -2,14 +2,14 @@ package Catalyst::Plugin::Session::Store::File;
 
 use strict;
 use base qw/
-  Class::Data::Inheritable
   Class::Accessor::Fast
+  Class::Data::Inheritable
   Catalyst::Plugin::Session::Store
   /;
 use NEXT;
 use Cache::FileCache ();
 
-our $VERSION = '0.10';
+our $VERSION = '0.07';
 
 __PACKAGE__->mk_classdata(qw/_session_file_storage/);
 

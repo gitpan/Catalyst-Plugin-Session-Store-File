@@ -1,25 +1,17 @@
----
-name: Catalyst-Plugin-Session-Store-File
-version: 0.10
-author:
-  - 'Sascha Kiefer, L<esskar@cpan.org>'
-abstract: |-
-  File storage backend for
-  session data.
-license: perl
-resources:
-  license: http://dev.perl.org/licenses/
-requires:
-  Cache::Cache: 1.02
-  Catalyst: 5
-  Catalyst::Plugin::Session: 0.01
-  Class::Accessor: 0.22
-  Class::Data::Inheritable: 0.04
-provides:
-  Catalyst::Plugin::Session::Store::File:
-    file: lib/Catalyst/Plugin/Session/Store/File.pm
-    version: 0.10
-generated_by: Module::Build version 0.2805
+--- #YAML:1.0
+name:                Catalyst-Plugin-Session-Store-File
+version:             0.07
+abstract:            File storage backend for
+license:             ~
+generated_by:        ExtUtils::MakeMaker version 6.36
+distribution_type:   module
+requires:     
+    Cache::Cache:                  1.02
+    Catalyst::Plugin::Session:     0.01
+    Class::Accessor::Fast:         0.22
+    Class::Data::Inheritable:      0.04
 meta-spec:
-  url: http://module-build.sourceforge.net/META-spec-v1.2.html
-  version: 1.2
+    url:     http://module-build.sourceforge.net/META-spec-v1.2.html
+    version: 1.2
+author:
+    - Sascha Kiefer <esskar@cpan.org>
