@@ -1,33 +1,33 @@
 package Catalyst::Plugin::Session::Store::File;
 
 use strict;
-use base qw/
-  Class::Accessor::Fast
-  Class::Data::Inheritable
-  Catalyst::Plugin::Session::Store
-  /;
+use warnings;
+
+use base qw( Class::Data::Inheritable Catalyst::Plugin::Session::Store );
+
 use NEXT;
 use Cache::FileCache ();
+use Catalyst::Utils ();
+use Path::Class ();
 
-our $VERSION = '0.12';
+our $VERSION = '0.13';
 
 __PACKAGE__->mk_classdata(qw/_session_file_storage/);
 
 =head1 NAME
 
-Catalyst::Plugin::Session::Store::File - File storage backend for
-session data.
+Catalyst::Plugin::Session::Store::File - File storage backend for session data.
 
 =head1 SYNOPSIS
 
-	use Catalyst qw/Session Session::Store::File Session::State::Foo/;
+    use Catalyst qw/Session Session::Store::File Session::State::Foo/;
 
-	MyApp->config->{session} = {
-		storage => '/tmp/session'
-	};
+    MyApp->config->{session} = {
+        storage => '/tmp/session'
+    };
 
-	# ... in an action:
-	$c->session->{foo} = 'bar'; # will be saved
+    # ... in an action:
+    $c->session->{foo} = 'bar'; # will be saved
 
 =head1 DESCRIPTION
 
