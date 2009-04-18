@@ -5,12 +5,12 @@ use warnings;
 
 use base qw( Class::Data::Inheritable Catalyst::Plugin::Session::Store );
 
-use NEXT;
+use MRO::Compat;
 use Cache::FileCache ();
 use Catalyst::Utils ();
 use Path::Class ();
 
-our $VERSION = '0.13';
+our $VERSION = '0.15';
 
 __PACKAGE__->mk_classdata(qw/_session_file_storage/);
 
@@ -54,16 +54,19 @@ L<Catalyst::Plugin::Session::Store>.
 
 sub get_session_data {
     my ( $c, $sid ) = @_;
+    $c->_check_session_file_storage;
     $c->_session_file_storage->get($sid);
 }
 
 sub store_session_data {
     my ( $c, $sid, $data ) = @_;
+    $c->_check_session_file_storage;
     $c->_session_file_storage->set( $sid, $data );
 }
 
 sub delete_session_data {
     my ( $c, $sid ) = @_;
+    $c->_check_session_file_storage;
     $c->_session_file_storage->remove($sid);
 }
 
@@ -78,7 +81,12 @@ Sets up the session cache file.
 sub setup_session {
     my $c = shift;
 
-    $c->NEXT::setup_session(@_);
+    $c->maybe::next::method(@_);
+}
+
+sub _check_session_file_storage {
+    my $c = shift;
+    return if $c->_session_file_storage;
 
     $c->config->{session}{namespace} ||= '';
     my $root = $c->config->{session}{storage} ||=

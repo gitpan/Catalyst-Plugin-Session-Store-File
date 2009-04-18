@@ -1,24 +1,27 @@
---- 
-abstract: File storage backend for session data.
-author: 
-  - Sascha Kiefer, L<esskar@cpan.org>
-build_requires: 
+---
+abstract: 'File storage backend for session data.'
+author:
+  - 'Sascha Kiefer, L<esskar@cpan.org>'
+build_requires:
   Test::More: 0
 distribution_type: module
-generated_by: Module::Install version 0.68
+generated_by: 'Module::Install version 0.77'
 license: perl
-meta-spec: 
-  url: http://module-build.sourceforge.net/META-spec-v1.3.html
-  version: 1.3
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
 name: Catalyst-Plugin-Session-Store-File
-no_index: 
-  directory: 
+no_index:
+  directory:
     - inc
     - t
-requires: 
+requires:
   Cache::Cache: 1.02
   Catalyst::Plugin::Session: 0
   Catalyst::Runtime: 5.7000
   Class::Data::Inheritable: 0.04
+  MRO::Compat: 0.10
   perl: 5.8.0
-version: 0.13
+resources:
+  license: http://dev.perl.org/licenses/
+version: 0.15

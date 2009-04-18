@@ -13,6 +13,7 @@ requires 'Class::Data::Inheritable'  => '0.04';
 requires 'Catalyst::Runtime'         => '5.7000';
 requires 'Cache::Cache'              => '1.02'; # for Cache::FileCache
 requires 'Catalyst::Plugin::Session';
+requires 'MRO::Compat' => '0.10';
 
 test_requires 'Test::More';
 

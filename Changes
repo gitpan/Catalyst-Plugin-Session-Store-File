@@ -1,5 +1,11 @@
 Revision history for Perl extension Catalyst::Plugin::Session::Store::File.
 
+0.14  18 Apr 2009
+    - switch to MRO Compat
+    - defer creation of cache store until first time it is needed.
+      This should allow the plugin to work "out of the box" under mod_perl.
+      See https://rt.cpan.org/Ticket/Display.html?id=27505
+
 0.13  16 Jan 2008
     - remove Class::Accessor prereq
     - further dist cleanups
