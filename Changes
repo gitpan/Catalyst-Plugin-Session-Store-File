@@ -1,5 +1,12 @@
 Revision history for Perl extension Catalyst::Plugin::Session::Store::File.
 
+0.16  24 Apr 2009
+    - 0.14 was mistakenly released as 0.15
+
+0.15  24 Apr 2009
+    - Create temp directory from class name, not stringified instance.
+      This stops you losing all your sessions when your app restarts. (xinming)
+
 0.14  18 Apr 2009
     - switch to MRO Compat
     - defer creation of cache store until first time it is needed.

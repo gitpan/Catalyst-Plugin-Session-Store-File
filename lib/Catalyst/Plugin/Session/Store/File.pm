@@ -10,7 +10,7 @@ use Cache::FileCache ();
 use Catalyst::Utils ();
 use Path::Class ();
 
-our $VERSION = '0.15';
+our $VERSION = '0.16';
 
 __PACKAGE__->mk_classdata(qw/_session_file_storage/);
 
@@ -90,7 +90,7 @@ sub _check_session_file_storage {
 
     $c->config->{session}{namespace} ||= '';
     my $root = $c->config->{session}{storage} ||=
-      File::Spec->catdir( Catalyst::Utils::class2tempdir($c),
+      File::Spec->catdir( Catalyst::Utils::class2tempdir(ref $c),
         "session", "data", );
 
     $root = $c->path_to($root) if $c->config->{session}{relative};
