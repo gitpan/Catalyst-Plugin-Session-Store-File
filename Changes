@@ -1,5 +1,8 @@
 Revision history for Perl extension Catalyst::Plugin::Session::Store::File.
 
+0.17  10 May 2009
+    - Add dependency on recent -Session to fix moose issues 
+
 0.16  24 Apr 2009
     - 0.14 was mistakenly released as 0.15
 

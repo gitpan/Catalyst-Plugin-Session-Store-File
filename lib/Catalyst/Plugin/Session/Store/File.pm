@@ -10,7 +10,7 @@ use Cache::FileCache ();
 use Catalyst::Utils ();
 use Path::Class ();
 
-our $VERSION = '0.16';
+our $VERSION = '0.17';
 
 __PACKAGE__->mk_classdata(qw/_session_file_storage/);
 
