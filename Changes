@@ -1,7 +1,10 @@
 Revision history for Perl extension Catalyst::Plugin::Session::Store::File.
 
+0.18  09 Oct 2009
+    - Port to new session confic key.
+
 0.17  10 May 2009
-    - Add dependency on recent -Session to fix moose issues 
+    - Add dependency on recent -Session to fix moose issues
 
 0.16  24 Apr 2009
     - 0.14 was mistakenly released as 0.15
@@ -23,10 +26,10 @@ Revision history for Perl extension Catalyst::Plugin::Session::Store::File.
 0.12  09 Jan 2008
     - merge 0.10 from CPAN to version in Cat repos and release
       the result. No feature/fixes, just packaging and src sanity.
-        
+
 0.11  09 Jan 2008
-    - fix Class::C3 compat - karman\
-      
+    - fix Class::C3 compat - karman
+
 0.10  07 Nov 2006
     - Example added
 

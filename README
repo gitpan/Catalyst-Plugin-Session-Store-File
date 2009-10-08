@@ -5,7 +5,7 @@ NAME
 SYNOPSIS
         use Catalyst qw/Session Session::Store::File Session::State::Foo/;
 
-        MyApp->config->{session} = {
+        MyApp->config->{'Plugin::Session'} = {
             storage => '/tmp/session'
         };
 
@@ -29,8 +29,8 @@ DESCRIPTION
         Sets up the session cache file.
 
 CONFIGURATION
-    These parameters are placed in the hash under the "session" key in the
-    configuration hash.
+    These parameters are placed in the hash under the "Plugin::Session" key
+    in the configuration hash.
 
     storage
         Specifies the directory root to be used for the sharing of session

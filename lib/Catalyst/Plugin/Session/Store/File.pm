@@ -10,7 +10,7 @@ use Cache::FileCache ();
 use Catalyst::Utils ();
 use Path::Class ();
 
-our $VERSION = '0.17';
+our $VERSION = '0.18';
 
 __PACKAGE__->mk_classdata(qw/_session_file_storage/);
 
@@ -22,7 +22,7 @@ Catalyst::Plugin::Session::Store::File - File storage backend for session data.
 
     use Catalyst qw/Session Session::Store::File Session::State::Foo/;
 
-    MyApp->config->{session} = {
+    MyApp->config->{'Plugin::Session'} = {
         storage => '/tmp/session'
     };
 
@@ -88,16 +88,16 @@ sub _check_session_file_storage {
     my $c = shift;
     return if $c->_session_file_storage;
 
-    $c->config->{session}{namespace} ||= '';
-    my $root = $c->config->{session}{storage} ||=
+    $c->_session_plugin_config->{namespace} ||= '';
+    my $root = $c->_session_plugin_config->{storage} ||=
       File::Spec->catdir( Catalyst::Utils::class2tempdir(ref $c),
         "session", "data", );
 
-    $root = $c->path_to($root) if $c->config->{session}{relative};
+    $root = $c->path_to($root) if $c->_session_plugin_config->{relative};
 
     Path::Class::dir($root)->mkpath;
 
-    my $cfg = $c->config->{session};
+    my $cfg = $c->_session_plugin_config;
     $c->_session_file_storage(
         Cache::FileCache->new(
             {
@@ -116,7 +116,7 @@ sub _check_session_file_storage {
 
 =head1 CONFIGURATION
 
-These parameters are placed in the hash under the C<session> key in the
+These parameters are placed in the hash under the C<Plugin::Session> key in the
 configuration hash.
 
 =over 4
